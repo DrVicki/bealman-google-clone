@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
 import './App.css';
+import Home from './components/Home';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SearchPage from './components/SearchPage';
+
+
+export default function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route exact path="./" element={<Home/>}>
+           
+          </Route>
+          <Route path="./search" element={<SearchPage/>}>
+         
+          </Route>
+        </Routes>
+      </Router>
+    <Home />
     </div>
   );
 }
 
-export default App;
+//export default App;
+
